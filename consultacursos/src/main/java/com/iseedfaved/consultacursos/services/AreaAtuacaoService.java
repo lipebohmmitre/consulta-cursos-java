@@ -46,6 +46,7 @@ public class AreaAtuacaoService {
             this.areaAtuacaoRepository.save(newAreaAtuacao);
             return newAreaAtuacao;
         }
+        if(areaAtuacao.getNome().isEmpty()) throw new RuntimeException("Nome está em branco");
         this.areaAtuacaoRepository.save(areaAtuacao);
 
         return areaAtuacao;
